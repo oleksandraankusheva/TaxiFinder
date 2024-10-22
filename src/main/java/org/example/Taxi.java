@@ -7,4 +7,8 @@ public class Taxi {
         this.id = id;
         this.location = location;
     }
+    @Override
+    public String toString() {
+        return "Taxi " + id + " at location " + location;
+    }
 }

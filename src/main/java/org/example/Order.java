@@ -5,4 +5,8 @@ public class Order {
     public Order(Point location) {
         this.location = location;
     }
+    @Override
+    public String toString() {
+        return "Order at location " + location;
+    }
 }
