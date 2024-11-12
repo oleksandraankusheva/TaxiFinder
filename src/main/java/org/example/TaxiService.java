@@ -7,6 +7,9 @@ public class TaxiService {
         private static final double costPerMinute = 2.0;
 
         public static double calculateFare(double distanceTrip, double timeInMinutes) {
+            if (distanceTrip < 0 || timeInMinutes < 0) {
+                throw new IllegalArgumentException("Negative values.");
+            }
             double tripCost = (distanceTrip * costPerKm) + (timeInMinutes * costPerMinute);
 
             return baseFare + tripCost;
