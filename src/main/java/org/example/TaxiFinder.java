@@ -1,10 +1,11 @@
 package org.example;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 
 public class TaxiFinder {
+    private static final Logger logger = LogManager.getLogger(TaxiFinder.class);
     public static double calculateDistance(Point p1, Point p2)
     {
         return Math.sqrt(Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2));
@@ -20,7 +21,7 @@ public class TaxiFinder {
                 nearestTaxi = taxi;
             }
         }
-
+        logger.info("Повідомлення lof4j2 з TaxiFinder");
         return nearestTaxi;
     }
 }

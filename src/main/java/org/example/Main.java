@@ -10,7 +10,7 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Hello! It is a new project!!!");
-        logger.info("Повідомлення lof4j2");
+        logger.info("Повідомлення lof4j2 з main");
 
         double distanceTrip = 10.0;
         double timeInMinutes = 15.0;
