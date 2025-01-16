@@ -2,10 +2,15 @@ package org.example;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class Main {
+    private static final Logger logger = LogManager.getLogger(Main.class);
 
     public static void main(String[] args) {
         System.out.println("Hello! It is a new project!!!");
+        logger.info("Повідомлення lof4j2");
 
         double distanceTrip = 10.0;
         double timeInMinutes = 15.0;
@@ -19,7 +24,7 @@ public class Main {
         double[] orderLocation = randomPoint.generatePoint();
         Order order = new Order(new Point(orderLocation[0], orderLocation[1]));
 
-        TaxiFinder taxiFinder = new TaxiFinder();
+        //TaxiFinder taxiFinder = new TaxiFinder();
         Taxi nearestTaxi = TaxiFinder.findNearestTaxi(taxis, order);
         System.out.println("Near Taxi: " + nearestTaxi.id);
 
