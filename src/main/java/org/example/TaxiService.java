@@ -1,6 +1,9 @@
 package org.example;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class TaxiService {
+        private static final Logger logger = LogManager.getLogger(TaxiService.class);
 
         private static final double baseFare = 30.0;
         private static final double costPerKm = 10.0;
@@ -11,7 +14,7 @@ public class TaxiService {
                 throw new IllegalArgumentException("Negative values.");
             }
             double tripCost = (distanceTrip * costPerKm) + (timeInMinutes * costPerMinute);
-
+            logger.info("Повідомлення lof4j2 з TaxiService");
             return baseFare + tripCost;
         }
 }
